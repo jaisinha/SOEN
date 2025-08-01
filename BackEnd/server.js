@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 import aiService from "./services/ai.services.js";
 const io = new Server(server, {
   cors: {
-    origin: "https://stellular-creponne-2172f4.netlify.app",
+    origin: *,
   },
 });
 
