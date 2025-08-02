@@ -8,7 +8,6 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import projectRoutes from "./routes/project.routes.js";
 import aiRoutes from "./routes/ai.routes.js";
-
 const corsOptions = {
   origin: "https://keen-youtiao-0cad38.netlify.app",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
@@ -18,12 +17,14 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); 
+app.use(morgan("dev"));
 connect();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use("/user", userRoutes);
-app.use(morgan("dev"));
+
 app.use("/project", projectRoutes);
 app.use("/ai", aiRoutes);
 
