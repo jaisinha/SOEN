@@ -79,6 +79,6 @@ io.on("connection", (socket) => {
     socket.leave(socket.roomId);
   });
 });
-server.listen(port, "0.0.0.0", () => {
+server.listen(port, () => {
   console.log("listening..." + port);
 });
