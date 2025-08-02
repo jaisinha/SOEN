@@ -5,7 +5,7 @@ import * as AuthMiddleware from "../middleware/auth.middleware.js";
 const router = Router();
 
 router.post(
-  `${import.meta.env.VITE_API_URL}/user/register`,
+  "/register",
   body("email").isEmail().withMessage("Email must be a valid email address"),
   body("password")
     .isLength({ min: 6 })
@@ -14,7 +14,7 @@ router.post(
 );
 
 router.post(
-  `${import.meta.env.VITE_API_URL}/user/login`,
+ "/login",
   body("email").isEmail().withMessage("Email must be a valid email address"),
   body("password")
     .isLength({ min: 6 })
@@ -23,15 +23,15 @@ router.post(
 );
 
 router.get(
-  `${import.meta.env.VITE_API_URL}/user/profile`,
+ "/profile",
   AuthMiddleware.authUser,
   userContoller.profileController
 );
 
-router.get(`${import.meta.env.VITE_API_URL}/user/logout`, AuthMiddleware.authUser, userContoller.logoutController);
+router.get("/logout", AuthMiddleware.authUser, userContoller.logoutController);
 
 router.get(
-  `${import.meta.env.VITE_API_URL}/user/all`,
+  "/all",
   AuthMiddleware.authUser,
   userContoller.getAllUsersController
 );
