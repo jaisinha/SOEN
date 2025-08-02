@@ -10,7 +10,7 @@ import projectRoutes from "./routes/project.routes.js";
 import aiRoutes from "./routes/ai.routes.js";
 
 const corsOptions = {
-  origin: "https://stellular-creponne-2172f4.netlify.app",
+  origin: "funny-gumption-1013b4.netlify.app",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"], // Add allowed headers explicitly if needed
